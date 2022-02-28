@@ -11,13 +11,13 @@ function announce() {
 
 announce "OpenSSH Server"
 
-if ! [ -x "$(command -v ssh)" ]; then
+#if ! [ -x "$(command -v ssh)" ]; then
 	
 	sudo apt install -y openssh-server
 	
-else
-	echo "Skipping, SSH seems to be installed"
-fi
+#else
+#	echo "Skipping, SSH seems to be installed"
+#fi
 
 
 announce "Net Tools for ifconfig"
