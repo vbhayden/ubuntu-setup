@@ -9,7 +9,7 @@ function announce() {
 }
 
 
-announce "VS Code Insiders"
+announce "OpenSSH Server"
 
 if ! [ -x "$(command -v ssh)" ]; then
 	
@@ -17,4 +17,15 @@ if ! [ -x "$(command -v ssh)" ]; then
 	
 else
 	echo "Skipping, SSH seems to be installed"
+fi
+
+
+announce "Net Tools for ifconfig"
+
+if ! [ -x "$(command -v ifconfig)" ]; then
+	
+	sudo apt install -y net-tools
+	
+else
+	echo "Skipping, Net Tools seems to be installed"
 fi
