@@ -6,6 +6,8 @@ Installs:
 - Docker
 - Docker Compose
 - OpenSSH Server
+- Visual Studio Code - Insiders
+- Net Tools (for `ifconfig`)
 
 ```
 sudo ./setup.sh <username>
