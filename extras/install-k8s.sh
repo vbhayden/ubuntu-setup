@@ -40,3 +40,15 @@ if ! [ -x "$(command -v minikube)" ]; then
 else
 	echo "Skipping, minikube seems to be installed"
 fi
+
+
+announce "Kompose"
+
+if ! [ -x "$(command -v kompose)" ]; then
+	
+	curl -L https://github.com/kubernetes/kompose/releases/download/v1.26.1/kompose-linux-amd64 -o kompose
+    mv ./kompose /usr/local/bin/kompose
+	
+else
+	echo "Skipping, kompose seems to be installed"
+fi
