@@ -19,14 +19,26 @@ announce "NodeJS"
 
 if ! [ -x "$(command -v node)" ]; then
 	
-	curl -sL "https://deb.nodesource.com/setup_$1.x" -o /tmp/nodesource_setup.sh
+    curl -sL "https://deb.nodesource.com/setup_$1.x" -o /tmp/nodesource_setup.sh
     bash /tmp/nodesource_setup.sh
 
     apt install -y nodejs
 
-	node -v
+    node -v
 
 else
 	echo "Skipping, node seems to be installed."
     echo "You may need to uninstall the current version with 'apt remove nodejs'"
 fi
+
+
+announce "Yarn"
+
+if ! [ -x "$(command -v yarn)" ]; then
+
+    npm install --global yarn
+
+else
+    echo "Skipping, yarn seems to be installed."
+fi
+
