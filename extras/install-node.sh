@@ -15,22 +15,34 @@ if [$# -ne 1]; then
 fi
 
 
-announce "NodeJS"
+announce "NodeJS Version Manager"
+
+if ! [ -x "$(command -v nvm)" ]; then
+	
+    curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+    source $HOME/.bashrc
+
+    nvm -v
+
+    echo "NVM has been installed, enter 'nvm' for help on swapping between NodeJS versions."
+
+else
+	echo "Skipping, nvm seems to be installed."
+fi
+
+
+announce "Latest NodeJS Version"
 
 if ! [ -x "$(command -v node)" ]; then
 	
-    curl -sL "https://deb.nodesource.com/setup_$1.x" -o /tmp/nodesource_setup.sh
-    bash /tmp/nodesource_setup.sh
-
-    apt install -y nodejs
+    nvm install --lts
 
     node -v
+    npm -v
 
 else
 	echo "Skipping, node seems to be installed."
-    echo "You may need to uninstall the current version with 'apt remove nodejs'"
 fi
-
 
 announce "Yarn"
 
