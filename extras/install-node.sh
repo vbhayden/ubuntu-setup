@@ -8,13 +8,6 @@ function announce() {
 	echo "#===============================================================#"
 }
 
-
-if [$# -ne 1]; then
-    echo "You must provide a version of NodeJS to install (12, 14, 16, etc.)"
-    exit 1
-fi
-
-
 announce "NodeJS Version Manager"
 
 if ! [ -x "$(command -v nvm)" ]; then
