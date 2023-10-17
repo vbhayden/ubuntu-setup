@@ -60,7 +60,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
 	# Docker-Compose is also complicated
 	#
 	# Add the GPG Key
-	curl -L https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+	curl -L https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 	
 	# Make sure it's executable
 	chmod +x /usr/local/bin/docker-compose
